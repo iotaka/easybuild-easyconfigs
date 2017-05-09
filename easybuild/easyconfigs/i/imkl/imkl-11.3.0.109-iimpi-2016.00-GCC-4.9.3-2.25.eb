@@ -16,9 +16,8 @@ checksums = ['47567e38801efe273b36b5250c759af7']
 
 dontcreateinstalldir = 'True'
 
-#license file
-import os
-license_file = os.path.join(os.getenv('HOME'), "licenses", "intel", "license.lic")
+# license file
+license_file = HOME + '/licenses/intel/license.lic'
 
 interfaces = True
 

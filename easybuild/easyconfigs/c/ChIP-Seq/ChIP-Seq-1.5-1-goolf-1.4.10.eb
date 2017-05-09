@@ -1,7 +1,7 @@
 # This file is an EasyBuild reciPY as per https://github.com/hpcugent/easybuild
 # Author: Pablo Escobar Lopez
 # sciCORE - University of Basel
-# SIB Swiss Institute of Bioinformatics 
+# SIB Swiss Institute of Bioinformatics
 
 easyblock = 'ConfigureMake'
 
@@ -15,8 +15,10 @@ description = """The ChIP-Seq software provides methods for the analysis of ChIP
 
 toolchain = {'name': 'goolf', 'version': '1.4.10'}
 
-source_urls = ['http://downloads.sourceforge.net/project/chip-seq/chip-seq/%(version)s/']
+source_urls = ['http://downloads.sourceforge.net/project/chip-seq/chip-seq/%s/' % '.'.join(version.split('-'))]
 sources = ['%(namelower)s.%(version)s.tar.gz']
+
+checksums = ['e36736c5151c872d9fc7afa54e3e8ccb']
 
 skipsteps = ['configure']
 
@@ -32,13 +34,13 @@ installopts += 'cp -a README doc/ %(installdir)s'
 
 sanity_check_paths = {
     'files': ["bin/%s" % x for x in ["chipcenter", "chipcor", "chipextract", "chippart", "chippeak",
-                                    "chipscore", "compactsga", "counts_filter", "countsga", "featreplace"]],
+                                     "chipscore", "compactsga", "counts_filter", "countsga", "featreplace"]],
     'dirs': []
 }
 
 # add tools dir to PATH
 modextrapaths = {
-        'PATH': "tools",
+    'PATH': "tools",
 }
 
 # fix shebang line in all provided perl scripts in tools folder

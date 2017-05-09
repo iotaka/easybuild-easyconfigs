@@ -5,7 +5,8 @@ name = 'intel'
 version = '2016.00'
 
 homepage = 'http://software.intel.com/en-us/intel-cluster-toolkit-compiler/'
-description = """Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MPI & Intel MKL."""
+description = """Intel Cluster Toolkit Compiler Edition provides Intel C/C++ and Fortran compilers, Intel MPI &
+ Intel MKL."""
 
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
@@ -19,7 +20,7 @@ dependencies = [
     ('icc', compver, gccsuff),
     ('ifort', compver, gccsuff),
     ('impi', '5.1.1.109', '', ('iccifort', '%s%s' % (compver, gccsuff))),
-    ('imkl', '11.3.0.109', '', ('iimpi', '%s%s' % (version,gccsuff))),
+    ('imkl', '11.3.0.109', '', ('iimpi', '%s%s' % (version, gccsuff))),
 ]
 
 moduleclass = 'toolchain'

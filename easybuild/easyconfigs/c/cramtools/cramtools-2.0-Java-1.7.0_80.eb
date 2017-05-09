@@ -9,7 +9,7 @@ read data. Although this is intended as a stable version the code is released as
 early access. Parts of the CRAMTools are experimental and may not be supported
 in the future."""
 
-toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchain = {'name': 'dummy', 'version': ''}
 
 sources = ['v%(version)s.tar.gz']
 source_urls = ['https://github.com/enasequence/%(name)s/archive/']
@@ -19,7 +19,7 @@ javaver = '1.7.0_80'
 versionsuffix = '-%s-%s' % (java, javaver)
 dependencies = [(java, javaver)]
 
-modloadmsg = "To execute cramtools run: java -jar \\${EBROOTCRAMTOOLS}/%(name)s-%(version)s.jar"
+modloadmsg = "To execute cramtools run: java -jar $EBROOTCRAMTOOLS/%(name)s-%(version)s.jar\n"
 
 sanity_check_paths = {
     'files': ["%(name)s-%(version)s.jar"],
